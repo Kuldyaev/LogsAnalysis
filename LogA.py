@@ -10,9 +10,8 @@ def main():
         cursor.execute('SELECT * FROM log LIMIT 5')
         for row in cursor:
             print (row)
-        cursor.close()
-        cursor.execute()
-        results = cursor.fetchall('SELECT * FROM authors LIMIT 2')
+        cursor.execute('SELECT * FROM authors LIMIT 2')
+        results = cursor.fetchall()
         for article in results:
             title = article[0]
             views = article[1]
