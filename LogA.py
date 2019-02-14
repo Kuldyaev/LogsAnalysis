@@ -11,7 +11,7 @@ def main():
 	     for row in cursor:
 		     print (row)
 	     cursor.close()
-	     cur.execute(
+	     cursor.execute(
               """
              select a.title, count(*) as views
              from articles as a join log as l on l.path LIKE CONCAT('%', a.slug)
@@ -20,7 +20,7 @@ def main():
              limit 3;
              """
             )
-            results = cur.fetchall()
+            results = cursor.fetchall()
             for article in results:
                title = article[0]
               views = article[1]
