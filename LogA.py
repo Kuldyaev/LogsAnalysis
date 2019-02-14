@@ -60,6 +60,7 @@ def main():
     for i in [1, 2, 3]:
         query = dict[i][1][0]    
         answer = work(query)
-        print(answer)
+        dict[i][2] = answer
+        print(dict[i][2])
 if __name__ == '__main__':
     main()
