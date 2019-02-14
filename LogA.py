@@ -15,7 +15,7 @@ def work(query):
 	    print ('Connects to the database is failed')
 
 dict = {
-1 : ['q1', [ """
+1 : ['What are the most popular three articles of all time?', [ """
         SELECT articles.title, COUNT(*) AS num
         FROM articles
         JOIN log
@@ -24,7 +24,7 @@ dict = {
         ORDER BY num DESC
         LIMIT 3;
     """] , 'ans1'],
-2 : ['q2', ["""
+2 : ['Who are the most popular article authors of all time?', ["""
         SELECT authors.name, COUNT(*) AS num
         FROM authors
         JOIN articles
@@ -35,7 +35,7 @@ dict = {
         ORDER BY num DESC
         LIMIT 3;
     """], 'ans2'],
-3 : ['q3', ["""
+3 : ['On which days did more than 1% of requests lead to errors?', ["""
         SELECT total.day,
           ROUND(((errors.error_requests*1.0) / total.requests), 3) AS percent
         FROM (
@@ -61,6 +61,10 @@ def main():
         query = dict[i][1][0]    
         answer = work(query)
         dict[i][2] = answer
-        print(dict[i][2])
+    print ('Q1: ' + dict[1][0] + 'Answer1: " + dict[1][2] +
+           'Q2: ' + dict[2][0] + 'Answer1: " + dict[2][2] +
+           'Q3: ' + dict[3][0] + 'Answer1: " + dict[3][2] )    
+ 
+ 
 if __name__ == '__main__':
     main()
