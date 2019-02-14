@@ -57,7 +57,7 @@ dict = {
         
         
 def main():
-    for i in range(4):
+    for i in [1, 2, 3]:
         query = dict[i][1][0]    
         answer = work(query)
         print(answer)
