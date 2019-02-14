@@ -14,11 +14,8 @@ def work(query):
     except:
 	    print ('Connects to the database is failed')
 
-
-
-
-if __name__ == '__main__':
-    work("""
+def main():
+    query = """
         SELECT total.day,
           ROUND(((errors.error_requests*1.0) / total.requests), 3) AS percent
         FROM (
@@ -35,4 +32,9 @@ if __name__ == '__main__':
         ON total.day = errors.day
         WHERE (ROUND(((errors.error_requests*1.0) / total.requests), 3) > 0.01)
         ORDER BY percent DESC;
-    """)
+        """
+    
+    answer = work(query)
+    print(answer)
+if __name__ == '__main__':
+    main()
