@@ -11,7 +11,22 @@ def main():
 	     for row in cursor:
 		     print (row)
 	     cursor.close()
-	     db.close()
+	     cur.execute(
+              """
+             select a.title, count(*) as views
+             from articles as a join log as l on l.path LIKE CONCAT('%', a.slug)
+             group by a.title
+             order by count(*) desc
+             limit 3;
+             """
+            )
+            results = cur.fetchall()
+            for article in results:
+               title = article[0]
+              views = article[1]
+              print("\"%s\" - %s views." % (title, views))
+           cursor.close()
+	   db.close()
     except:
 	    print ('FAIL')
 
