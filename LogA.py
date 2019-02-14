@@ -15,7 +15,8 @@ def work(query):
 	    print ('Connects to the database is failed')
 
 dict = {
-1 : ['q1', ' SELECT total.day,
+1 : ['q1', [ """
+        SELECT total.day,
           ROUND(((errors.error_requests*1.0) / total.requests), 3) AS percent
         FROM (
           SELECT date_trunc('day', time) "day", count(*) AS error_requests
@@ -30,15 +31,15 @@ dict = {
           ) AS total
         ON total.day = errors.day
         WHERE (ROUND(((errors.error_requests*1.0) / total.requests), 3) > 0.01)
-        ORDER BY percent DESC;'
-        , 'ans1'],
+        ORDER BY percent DESC;
+    """] , 'ans1'],
 2 : ['q2', 'sql2', 'ans2'],
 3 : ['q3', 'sql3', 'ans3']
 }        
         
         
 def main():
-    query = dict[1][2]    
+    query = dict[1][1][0]    
     answer = work(query)
     print(answer)
 if __name__ == '__main__':
