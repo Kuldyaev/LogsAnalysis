@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import psycopg2
 
 def main():
@@ -10,23 +9,18 @@ def main():
 	     cursor.execute('SELECT * FROM log LIMIT 5')
 	     for row in cursor:
 		     print (row)
-	     cursor.close()
-	     cursor.execute(
-              """
-             select a.title, count(*) as views
+	     cursor.execute("""select a.title, count(*) as views
              from articles as a join log as l on l.path LIKE CONCAT('%', a.slug)
              group by a.title
              order by count(*) desc
-             limit 3;
-             """
-            )
-            results = cursor.fetchall()
-            for article in results:
-               title = article[0]
-              views = article[1]
-              print("\"%s\" - %s views." % (title, views))
-           cursor.close()
-	   db.close()
+             limit 3; """)
+         results = cursor.fetchall()
+         for article in results:
+             title = article[0]
+             views = article[1]
+             print("\"%s\" - %s views." % (title, views))
+         cursor.close()
+	     db.close()
     except:
 	    print ('FAIL')
 
