@@ -13,7 +13,7 @@ def main():
 	     cursor.close()
 	     cursor.execute()
          results = cursor.fetchall('SELECT * FROM authors LIMIT 2')
-         for article in results:
+		 for article in results:
              title = article[0]
              views = article[1]
              print("\"%s\" - %s views." % (title, views))
