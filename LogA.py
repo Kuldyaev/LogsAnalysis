@@ -61,9 +61,9 @@ def main():
         query = dict[i][1][0]    
         answer = work(query)
         dict[i][2] = answer
-    print ('\n Q1: ' + str(dict[1][0]) + '\n Answer1: ' + str(dict[1][2]) +
-           '\t \n Q2: ' + str(dict[2][0]) + '\n Answer1: ' + str(dict[2][2]) +
-           '\t \n Q3: ' + str(dict[3][0]) + '\n Answer1: ' + str(dict[3][2]))    
+    print ('\n Question1: ' + str(dict[1][0]) + '\n Answer1: ' + str(dict[1][2]) +
+           '\n \n Question2: ' + str(dict[2][0]) + '\n Answer1: ' + str(dict[2][2]) +
+           '\n \n Question3: ' + str(dict[3][0]) + '\n Answer1: ' + str(dict[3][2]))    
  
  
 if __name__ == '__main__':
