@@ -15,15 +15,13 @@ def work(query):
 	    print ('Connects to the database is failed')
 
 dict = {
-1 : ['What are the most popular three articles of all time?', [ """
-        SELECT articles.title, COUNT(*) AS num
-        FROM articles
-        JOIN log
-        ON log.path LIKE concat('/article/%', articles.slug)
-        GROUP BY articles.title
-        ORDER BY num DESC
-        LIMIT 3;
-    """] , 'ans1'],
+1 : ['What are the most popular three articles of all time?', 
+        [ """SELECT a.title, a.slug, count(a.slug) as count 
+            FROM log l JOIN articles a 
+            ON l.path = concat('/article/', a.slug) 
+            GROUP BY a.slug, a.title 
+            ORDER BY count DESC 
+            LIMIT 3;"""] , 'ans1'],
 2 : ['Who are the most popular article authors of all time?', ["""
         SELECT authors.name, COUNT(*) AS num
         FROM authors
