@@ -51,9 +51,7 @@ def main():
                 stat02 =(rec[1] + " -- " + str(rec[0]) + " views")
             statment +=  stat02
         else:
-            for record in dict[i][2]:
-                stat02 =(record[0])
-            statment += stat03
+            statment += str(dict[i][2])
     print (statment) 
  
 if __name__ == '__main__':
