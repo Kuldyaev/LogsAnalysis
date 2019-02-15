@@ -62,7 +62,7 @@ def main():
         query = dict[i][1][0]    
         answer = work(query)
         dict[i][2] = answer
-        statment += '\n Question' + i +': ' + str(dict[1][0]) + '\n Answer' + i + ': '
+        statment += '\n Question' + str(i) +': ' + str(dict[1][0]) + '\n Answer' + str(i) + ': '
         if i==1:
             for rec in dict[1][2]:
                stat01 = (rec[0] + " -- " + str(rec[2]) + " views")
