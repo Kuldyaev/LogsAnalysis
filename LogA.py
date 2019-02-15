@@ -63,11 +63,11 @@ def main():
         answer = work(query)
         dict[i][2] = answer
         statment += '\n Question' + i +': ' + str(dict[1][0]) + '\n Answer' + i + ': '
-        if i=1:
+        if i==1:
             for rec in dict[1][2]:
                stat01 = (rec[0] + " -- " + str(rec[2]) + " views")
             statment +=  stat01
-        elif i=2:
+        elif i==2:
             for rec in dict[1][2]:
                 stat02 =(rec[1] + " -- " + str(rec[0]) + " views")
             statment +=  stat02
