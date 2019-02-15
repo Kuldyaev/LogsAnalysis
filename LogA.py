@@ -61,9 +61,10 @@ def main():
         query = dict[i][1][0]    
         answer = work(query)
         dict[i][2] = answer
-    print ('\n Question1: ' + str(dict[1][0]) + '\n Answer1: ' + str(dict[1][2]) +
-           '\n \n Question2: ' + str(dict[2][0]) + '\n Answer1: ' + str(dict[2][2]) +
-           '\n \n Question3: ' + str(dict[3][0]) + '\n Answer1: ' + str(dict[3][2]))    
+    print ('\n Question1: ' + str(dict[1][0]) + '\n Answer1: ' + str(for rec in dict[1][2]:
+            (rec[0] + " -- " + str(rec[2]) + " views")) +
+           '\n \n Question2: ' + str(dict[2][0]) + '\n Answer2: ' + str(dict[2][2]) +
+           '\n \n Question3: ' + str(dict[3][0]) + '\n Answer3: ' + str(dict[3][2]))    
  
  
 if __name__ == '__main__':
