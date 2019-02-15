@@ -30,7 +30,11 @@ dict = {
                 ORDER BY count DESC 
                 LIMIT 3; """], 'ans2'],
 3 : ['On which days did more than 1% of requests lead to errors?', 
-        ["""SELECT * FROM Percent WHERE Percent > 1"""], 'ans3']
+        ["""SELECT *
+        FROM error_rate
+        WHERE error_rate.percentage > 1
+        ORDER BY error_rate.percentage DESC;
+        """], 'ans3']
 }        
         
         
