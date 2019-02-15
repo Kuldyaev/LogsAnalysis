@@ -29,9 +29,8 @@ dict = {
                 GROUP BY au.name
                 ORDER BY count DESC 
                 LIMIT 3; """], 'ans2'],
-3 : ['On which days did more than 1% of requests lead to errors?', ["""SELECT date
-                FROM error_log_view
-                WHERE "Percent Error" > 1"""], 'ans3']
+3 : ['On which days did more than 1% of requests lead to errors?', 
+        ["""SELECT * FROM Percent WHERE Percent > 1"""], 'ans3']
 }        
         
         
@@ -43,14 +42,17 @@ def main():
         dict[i][2] = answer
         statment += '\n Question' + str(i) +': ' + str(dict[1][0]) + '\n Answer' + str(i) + ': '
         if i==1:
+            print (dict[i][2])
             for rec in dict[i][2]:
-               stat01 = (rec[0] + " -- " + str(rec[2]) + " views")
+                stat01 = (rec[0] + " -- " + str(rec[2]) + " views")
             statment +=  stat01
         elif i==2:
+            print (dict[i][2])
             for rec in dict[i][2]:
                 stat02 =(rec[1] + " -- " + str(rec[0]) + " views")
             statment +=  stat02
         else:
+            print (dict[i][2])
             statment += str(dict[i][2])
     print (statment) 
  
