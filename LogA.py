@@ -57,15 +57,25 @@ dict = {
         
         
 def main():
+    statment = " "
     for i in [1, 2, 3]:
         query = dict[i][1][0]    
         answer = work(query)
         dict[i][2] = answer
-    print ('\n Question1: ' + str(dict[1][0]) + '\n Answer1: ' + str(for rec in dict[1][2]:
-            (rec[0] + " -- " + str(rec[2]) + " views")) +
-           '\n \n Question2: ' + str(dict[2][0]) + '\n Answer2: ' + str(dict[2][2]) +
-           '\n \n Question3: ' + str(dict[3][0]) + '\n Answer3: ' + str(dict[3][2]))    
- 
+        statment += '\n Question' + i +': ' + str(dict[1][0]) + '\n Answer' + i + ': '
+        if i=1:
+            for rec in dict[1][2]:
+               stat01 = (rec[0] + " -- " + str(rec[2]) + " views")
+            statment +=  stat01
+        elif i=2:
+            for rec in dict[1][2]:
+                stat02 =(rec[1] + " -- " + str(rec[0]) + " views")
+            statment +=  stat02
+        else:
+            for record in cur3:
+                stat02 =(record[0])
+            statment += stat03
+    print (statment) 
  
 if __name__ == '__main__':
     main()
