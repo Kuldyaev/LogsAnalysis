@@ -48,7 +48,7 @@ def main():
         print (answer)
         if i==1:
             for rec in answer:
-                stat01 = (rec[0] + " -- " + str(rec[2]) + " views")
+                stat01 = (rec[0] + " -- " + str(rec[1]) + " views")
             statment +=  stat01
         elif i==2:
             for rec in answer:
