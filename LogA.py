@@ -16,12 +16,13 @@ def work(query):
 
 dict = {
 1 : ['What are the most popular three articles of all time?', 
-        [ """SELECT a.title, a.slug, count(a.slug) as count 
-            FROM log l JOIN articles a 
-            ON l.path = concat('/article/', a.slug) 
-            GROUP BY a.slug, a.title 
-            ORDER BY count DESC 
-            LIMIT 3;"""] , 'ans1'],
+        [ """SELECT articles.title as Article,
+             COUNT(*) as hits
+             FROM articles,log
+             WHERE log.path = CONCAT('/article/',articles.slug)
+             GROUP BY articles.title 
+	     ORDER BY hits DESC 
+	     LIMIT 3; """] , 'ans1'],
 2 : ['Who are the most popular article authors of all time?', ["""SELECT count(l.id) as count, au.name 
                 FROM articles a JOIN log l ON l.path = concat('/article/', a.slug) 
                 JOIN authors au 
