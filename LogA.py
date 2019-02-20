@@ -62,7 +62,7 @@ def main():
                 stat02 =("\n \t" + rec[0] + " -- " + str(rec[1]) + " views")
                 statment +=  stat02
         else:
-            statment += str(answer)
+            statment += "\n \t" + answer[0] + " -- " + answer[1]
         dict[i][2] = answer
     print (statment) 
  
