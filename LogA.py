@@ -34,11 +34,24 @@ dict = {
         ORDER BY num DESC
         LIMIT 3;"""], 'ans2'],
 3 : ['On which days did more than 1% of requests lead to errors?', 
-        ["""SELECT to_char(time, 'DD FMMonth YYYY') AS date,
-        (count(status) filter (where status like '404%'))
-        * 100.0 / (count(status)) as errors
-        FROM log group BY date
-        having errors (status) > 1.0;"""], 'ans3']
+        ["""
+        SELECT total.day,
+          ROUND(((errors.error_requests*1.0) / total.requests), 3) AS percent
+        FROM (
+          SELECT date_trunc('day', time) "day", count(*) AS error_requests
+          FROM log
+          WHERE status LIKE '404%'
+          GROUP BY day
+        ) AS errors
+        JOIN (
+          SELECT date_trunc('day', time) "day", count(*) AS requests
+          FROM log
+          GROUP BY day
+          ) AS total
+        ON total.day = errors.day
+        WHERE (ROUND(((errors.error_requests*1.0) / total.requests), 3) > 0.01)
+        ORDER BY percent DESC;
+    """], 'ans3']
 }        
         
         
