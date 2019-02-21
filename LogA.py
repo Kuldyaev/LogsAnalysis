@@ -40,7 +40,7 @@ dict = {
 		  SELECT substring(cast(log.time as text), 0, 11) as day,
                   count(*) as requests FROM log WHERE status like '%404%' GROUP BY day)
                    as log_percentage group by day order by per DESC) as final_query
-                   where perc >= 1
+                   where per >= 1
             """], 'ans3']
 }        
         
