@@ -4,7 +4,6 @@ import psycopg2
 def work(query):
     try:
         db = psycopg2.connect(database='news' , user='postgres' , password='postgres' , port=5432, host='localhost')
-        print ("Connects to the database is completed")
         cursor=db.cursor()
         cursor.execute(query)
         results = cursor.fetchall()
@@ -52,7 +51,6 @@ def main():
         query = dict[i][1][0]    
         answer = work(query)
         statment += '\n Question ' + str(i) +': ' + str(dict[i][0]) + '\n Answer ' + str(i) + ': '
-        print (answer)
         if i==1:
             for rec in answer:
                 stat01 = ("\n \t" + rec[0] + " -- " + str(rec[1]) + " views")
@@ -62,7 +60,7 @@ def main():
                 stat02 =("\n \t" + rec[0] + " -- " + str(rec[1]) + " views")
                 statment +=  stat02
         else:
-            statment += "\n \t" + str(answer[0][0]) + " -- " + str(answer[0][1])
+            statment += "\n \t" + str(answer[0][0]) + "  " + str(answer[0][1]) + "% of requests lead to errors"
         dict[i][2] = answer
     print (statment) 
  
