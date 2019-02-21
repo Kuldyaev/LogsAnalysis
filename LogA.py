@@ -35,8 +35,8 @@ dict = {
         LIMIT 3;"""], 'ans2'],
 3 : ['On which days did more than 1% of requests lead to errors?', 
         ["""SELECT day, per FROM (
-            SELECT day, round((sum(requests)/(SELECT count(*) FROM log WHERE
-                substring(cast(log.time as text), 0, 11) = day) * 100), 2) 
+              SELECT day, round((sum(requests)/(
+	        SELECT count(*) FROM log WHERE substring(cast(log.time as text), 0, 11) = day) * 100), 2) 
 		AS per FROM (SELECT substring(cast(log.time as text), 0, 11) as day,
                 count(*) as requests FROM log WHERE status like '%404%' GROUP BY day)
                 as log_percentage group by day order by per DESC) as final_query
@@ -61,7 +61,7 @@ def main():
                 stat02 =("\n \t" + rec[0] + " -- " + str(rec[1]) + " views")
                 statment +=  stat02
         else:
-            statment += "\n \t" + answer[0]+ " -- " + answer[0]
+            statment += "\n \t" + answer + " -- " + answer
         dict[i][2] = answer
     print (statment) 
  
