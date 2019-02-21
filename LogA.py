@@ -37,10 +37,11 @@ dict = {
         ["""SELECT day, per FROM (
               SELECT day, round((sum(requests)/(
 	        SELECT count(*) FROM log WHERE substring(cast(log.time as text), 0, 11) = day) * 100), 2) 
-		AS per FROM (SELECT substring(cast(log.time as text), 0, 11) as day,
-                count(*) as requests FROM log WHERE status like '%404%' GROUP BY day)
-                as log_percentage group by day order by per DESC) as final_query
-                where perc >= 1
+		AS per FROM (
+		  SELECT substring(cast(log.time as text), 0, 11) as day,
+                  count(*) as requests FROM log WHERE status like '%404%' GROUP BY day)
+                   as log_percentage group by day order by per DESC) as final_query
+                   
             """], 'ans3']
 }        
         
