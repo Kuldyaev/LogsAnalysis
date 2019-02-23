@@ -53,11 +53,11 @@ def main():
         statment += '\n Question ' + str(i) +': ' + str(dict[i][0]) + '\n Answer ' + str(i) + ': '
         if i==1:
             for rec in answer:
-                stat01 = ("\n \t" + u'\u2022' + '\"' + rec[0] + '\"' + " -- " + str(rec[1]) + " views")
+                stat01 = ("\n \t" + u'\u2022' + ' \"' + rec[0] + '\"' + " -- " + str(rec[1]) + " views")
                 statment +=  stat01
         elif i==2:
             for rec in answer:
-                stat02 =("\n \t" + u'\u2022' + rec[0] + " -- " + str(rec[1]) + " views")
+                stat02 =("\n \t" + u'\u2022'+ ' ' + rec[0] + " -- " + str(rec[1]) + " views")
                 statment +=  stat02
         else:
             statment += "\n \t" + str(answer[0][0]) + "  " + str(answer[0][1]) + '%' + ' of requests lead to errors'
