@@ -4,7 +4,8 @@ import psycopg2
 
 def work(query):
     try:
-        db = psycopg2.connect(database='news' , user='postgres' , password='postgres' , port=5432, host='localhost')
+        db = psycopg2.connect(database='news', user='postgres',
+			      password='postgres', port=5432, host='localhost')
         cursor=db.cursor()
         cursor.execute(query)
         results = cursor.fetchall()
