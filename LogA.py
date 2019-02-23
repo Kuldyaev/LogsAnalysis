@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import psycopg2
 
+
 def work(query):
     try:
         db = psycopg2.connect(database='news' , user='postgres' , password='postgres' , port=5432, host='localhost')
