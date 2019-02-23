@@ -1,4 +1,7 @@
-newsdata-LogsAnalysis
+# Logs Analysis
+
+#### This is Project №3 in the Udacty Full Stack Nanodegree Program
+
 
 To run this program, the user needs to setup the news database.
 
