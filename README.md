@@ -8,8 +8,11 @@ For this project, you will need:
 * Python 3
 * Vagrant
 * VirtualBox
+
 Download the schema and data file here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
+
 Create and setup the database with the command: psql -d news -f newsdata.sql
+
 The database should include three tables:
 * authors
 * articles
