@@ -7,9 +7,9 @@ def work(query):
         cursor=db.cursor()
         cursor.execute(query)
         results = cursor.fetchall()
-        return results
         cursor.close()
         db.close()
+	return results
     except:
 	    print ('Connects to the database is failed')
 
