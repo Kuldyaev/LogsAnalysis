@@ -11,6 +11,14 @@ For this project, you will need:
 
 To run this program, the user needs to setup the news database.
 
+To use the same virtual machine to run this SQL database, you will first need to download VirtualBox, this will run the virtual machine. You do not need the extension pack, SDK or to launch the virtualbox, vagrant will do that. This is the link to download virtual box:
+
+https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
+
+Download vagrant, install the version for your operating system. This is the link:
+
+https://www.vagrantup.com/downloads.html
+
 Download the schema and data file here: 
 
 https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
