@@ -8,6 +8,7 @@ For this project, you will need:
 * Python 3
 * Vagrant
 * VirtualBox
+
 To run this program, the user needs to setup the news database.
 
 Download the schema and data file here: 
@@ -26,5 +27,7 @@ Download/Clone LogA.py file from  this repository.
 The program must be run from within a VM environment such as vagrant.
 
 In your python terminal, switch to the directory you have saved these files in and run LogA.py.
+
+$ python LogA.py
 
 This repositoryt also included is output.txt containing the output of the LogA.py code.
