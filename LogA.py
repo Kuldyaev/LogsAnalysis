@@ -32,7 +32,7 @@ dict = {
         JOIN articles
         ON authors.id = articles.author
         JOIN log
-        ON log.path==CONCAT('/article/%', articles.slug)
+        ON log.path=CONCAT('/article/%', articles.slug)
         GROUP BY authors.name
         ORDER BY num DESC
         LIMIT 3;"""], 'ans2'],
@@ -57,6 +57,7 @@ def main():
     for i in [1, 2, 3]:
         query = dict[i][1][0]
         answer = work(query)
+        print(answer)
         statment += ('\n Question ' + str(i) + ': ' + str(dict[i][0]) +
                      '\n Answer ' + str(i) + ': ')
         if i == 1:
