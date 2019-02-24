@@ -62,7 +62,7 @@ def main():
                      '\n Answer ' + str(i) + ': ')
         if i == 1:
             for (art, view) in answer:
-                stat01 = ("\n \t - {} -- {} views".format(art, view))
+                stat01 = ('\n \t - "{}" -- {} views'.format(art, view))
                 statment += stat01
         elif i == 2:
             for (autor, view) in answer:
