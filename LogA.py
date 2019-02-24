@@ -64,9 +64,9 @@ def main():
                 stat02 = ("\n \t - {} -- {} views".format(autor, view))
                 statment += stat02
         else:
-            statment += ("\n \t" + str(answer[0][0]) + "  " +
-                         str(answer[0][1]) + '%' +
-                         ' of requests lead to errors')
+            ddt = answer[0][0]
+            rtt = round(answer[0][1],2)
+            statment += ("\n \t  {} -- {} % of requests lead to errors".format(ddt, rtt))
         dict[i][2] = answer
     print(statment)
 
