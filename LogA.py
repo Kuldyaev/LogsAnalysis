@@ -39,7 +39,7 @@ dict = {
         LIMIT 3;"""], 'ans2'],
  3: ['On which days did more than 1% of requests lead to errors?',
      ["""SELECT to_char(date, 'FMMonth FMDD, YYYY'), ROUND (err*100/total, 2, 1) AS ratio
-        FROM (SELECT time::date AS date
+        FROM (SELECT time::date AS date,
         COUNT(*) AS total,
         SUM((status != '200 OK')::int)::float as err
         FROM log GROUP BY date) AS errors
