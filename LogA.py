@@ -37,18 +37,13 @@ dict = {
         ORDER BY num DESC
         LIMIT 3;"""], 'ans2'],
  3: ['On which days did more than 1% of requests lead to errors?',
-     ["""SELECT day, per FROM (
-              SELECT day, round((sum(requests)/(
-            SELECT count(*) FROM log
-            WHERE substring(cast(log.time as text), 0, 11) = day) * 100), 2)
-        AS per FROM (
-          SELECT substring(cast(log.time as text), 0, 11) as day,
-                  count(*) as requests FROM log
-                  WHERE status like '%404%' GROUP BY day)
-                   as log_percentage group by day order by per DESC)
-                   as final_query
-                   where per >= 1
-            """], 'ans3']
+     ["""select to_char(date, 'FMMonth FMDD, YYYY'), err/total as ratio
+       from (select time::date as date,
+                    count(*) as total,
+                    sum((status != '200 OK')::int)::float as err
+                    from log
+                    group by date) as errors
+       where err/total > 0.01;"""], 'ans3']
 }
 
 
