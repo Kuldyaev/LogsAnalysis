@@ -28,8 +28,8 @@ The program must be run from within a VM environment such as vagrant.
 
 In your python terminal, switch to the directory you have saved these files in and run LogA.py.
 
-'''
+```
 $ python LogA.py
-'''
+```
 
 This repositoryt also included is output.txt containing the output of the LogA.py code.
