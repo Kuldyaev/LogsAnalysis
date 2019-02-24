@@ -32,7 +32,7 @@ dict = {
         JOIN articles
         ON authors.id = articles.author
         JOIN log
-        ON log.path=CONCAT('/article/%', articles.slug)
+        ON log.path==CONCAT('/article/%', articles.slug)
         GROUP BY authors.name
         ORDER BY num DESC
         LIMIT 3;"""], 'ans2'],
