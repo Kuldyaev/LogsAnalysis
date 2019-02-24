@@ -57,8 +57,7 @@ def main():
     for i in [1, 2, 3]:
         query = dict[i][1][0]
         answer = work(query)
-        statment += '\n Question ' + str(i) + ': ' + str(dict[i][0])
-            + '\n Answer ' + str(i) + ': '
+        statment += '\n Question ' + str(i) + ': ' + str(dict[i][0]) + '\n Answer ' + str(i) + ': '
         if i == 1:
             for (art, view) in answer:
                 stat01 = ("        - {} -- {} views".format(art, view))
