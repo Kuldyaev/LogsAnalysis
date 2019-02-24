@@ -70,11 +70,11 @@ def main():
                 statment += stat02
         else:
             statment += ("\n \t" + str(answer[0][0]) + "  " +
-                     str(answer[0][1]) + '%' + ' of requests lead to errors')
+                         str(answer[0][1]) + '%' +
+                         ' of requests lead to errors')
         dict[i][2] = answer
     print(statment)
 
 
 if __name__ == '__main__':
     main()
-
