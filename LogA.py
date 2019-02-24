@@ -57,7 +57,8 @@ def main():
     for i in [1, 2, 3]:
         query = dict[i][1][0]
         answer = work(query)
-        statment += '\n Question ' + str(i) + ': ' + str(dict[i][0]) + '\n Answer ' + str(i) + ': '
+        statment += '\n Question ' + str(i) + ': ' + str(dict[i][0]) + 
+            '\n Answer ' + str(i) + ': '
         if i == 1:
             for (art, view) in answer:
                 stat01 = ("        - {} -- {} views".format(art, view))
@@ -68,8 +69,8 @@ def main():
                           " -- " + str(rec[1]) + " views")
                 statment += stat02
         else:
-            statment += "\n \t" + str(answer[0][0]) + "  " + str(answer[0][1])
-        + '%' + ' of requests lead to errors'
+            statment += "\n \t" + str(answer[0][0]) + "  " + str(answer[0][1]) +
+        '%' + ' of requests lead to errors'
         dict[i][2] = answer
     print(statment)
 
