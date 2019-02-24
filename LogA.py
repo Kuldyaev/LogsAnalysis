@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 import psycopg2
 
@@ -37,13 +38,12 @@ dict = {
         ORDER BY num DESC
         LIMIT 3;"""], 'ans2'],
  3: ['On which days did more than 1% of requests lead to errors?',
-     ["""select to_char(date, 'FMMonth FMDD, YYYY'), err/total as ratio
-       from (select time::date as date,
-                    count(*) as total,
-                    sum((status != '200 OK')::int)::float as err
-                    from log
-                    group by date) as errors
-       where err/total > 0.01;"""], 'ans3']
+     ["""SELECT to_char(date, 'FMMonth FMDD, YYYY'), err*100/total AS ratio
+        FROM (SELECT time::date AS date,
+        COUNT(*) AS total,
+        SUM((status != '200 OK')::int)::float as err
+        FROM log GROUP BY date) AS errors
+        WHERE err/total > 0.01;"""], 'ans3']
 }
 
 
