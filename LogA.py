@@ -64,8 +64,8 @@ def main():
                 statment += stat01
         elif i == 2:
             for rec in answer:
-                stat02 = ("\n \t" + u'\u2022' + ' ' + rec[0]
-                          + " -- " + str(rec[1]) + " views")
+                stat02 = ("\n \t" + u'\u2022' + ' ' + rec[0] +
+                          " -- " + str(rec[1]) + " views")
                 statment += stat02
         else:
             statment += "\n \t" + str(answer[0][0]) + "  " + str(answer[0][1])
